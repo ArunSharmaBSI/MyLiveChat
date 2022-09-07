@@ -36,21 +36,57 @@
     <!-- Chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
-    <title>My Live Chat</title>
+    <title>Covid-19 Tracker India</title>
   </head>
   <body>
     <div class="container-fluid bg-light p-5 text-center my-3">
-      <h1 class="">Test Live Chat Site</h1>
+      <h1 class="">Covid-19 Tracker India</h1>
       <h5 class="text-muted">
-        
+        An opensource project to keep track of all the COVID-19 cases around the
+        world.
       </h5>
+    </div>
+
+    <div class="container my-5">
+      <div class="row text-center">
+        <div class="col-3 text-warning">
+          <h5>Confirmed</h5>
+          <p id="confirmed"></p>
+        </div>
+        <div class="col-3 text-info">
+          <h5>Active</h5>
+          <p id="active"></p>
+        </div>
+        <div class="col-3 text-success">
+          <h5>Recovered</h5>
+          <p id="recovered"></p>
+        </div>
+        <div class="col-3 text-danger">
+          <h5>Deceased</h5>
+          <p id="deaths"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container bg-light p-3 my-5 text-center">
+      <h5 class="text-info">"Prevention is the Cure."</h5>
+      <p class="text-muted">Stay Indoors Stay Safe.</p>
+    </div>
+
+    <canvas id="myChart"></canvas>
+
+    <div class="container text-center my-5">
+      <h6 class="text-info">
+        *Click on the Confirmed/Recovered/Deaths buttons above to see the chart
+        individually.*
+      </h6>
     </div>
 
     <footer class="footer mt-5 py-3 bg-light">
       <div class="container text-center">
         <span class="text-muted"
-          >Copyright &copy;2022,
-          <a href="#" target="_blank">Live Chat</a></span
+          >Copyright &copy;2020,
+          <a href="https://packetcode.in" target="_blank">Packetcode</a></span
         >
       </div>
     </footer>
