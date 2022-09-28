@@ -475,11 +475,22 @@
                 embedded_svc.settings.displayHelpButton = true; //Or false
                 embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
         
-                //start custom links
-                embedded_svc.settings.smallCompanyLogoImgURL = "https://beamsuntory--chatbot--c.sandbox.vf.force.com/resource/1664352204000/BSI_Chat_Logo";
-                embedded_svc.settings.avatarImgURL = "https://beamsuntory--chatbot--c.sandbox.vf.force.com/resource/1664352233000/BSI_Chat_Avatar";
-                //end custom links
-
+                embedded_svc.settings.extraPrechatInfo = [{
+                    "entityFieldMaps": [{
+                      "doCreate": true,
+                      "doFind": true,
+                      "fieldName": "LastName",
+                      "isExactMatch": true,
+                      "label": "Last Name"
+                    }, {
+                      "doCreate": true,
+                      "doFind": true,
+                      "fieldName": "Email",
+                      "isExactMatch": true,
+                      "label": "Email"
+                    }],
+                    "entityName": "Contact"
+                  }];
                 //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
                 //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
         
@@ -525,7 +536,7 @@
             } else {
                 initESW('https://service.force.com');
             }
-        </script> 
+        </script>
 		<!-- Salesforce Live Chat Widget Ends -->
     </body>
 </html>
