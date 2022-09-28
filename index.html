@@ -483,6 +483,10 @@
                     "label": "Origin",
                     "value": "Web",
                     "displayToAgent": false
+                  }, {
+                    "label": "RecordTypeId",
+                    "value": "0123C000000coPAQAY",
+                    "displayToAgent": false
                   }];
 
                 embedded_svc.settings.extraPrechatInfo = [{
@@ -532,7 +536,13 @@
                       "doCreate": true,
                       "doFind": false,
                       "label": "Origin"
-                    }]
+                    }, {
+                        "isExactMatch": false,
+                        "fieldName": "RecordTypeId",
+                        "doCreate": true,
+                        "doFind": false,
+                        "label": "RecordTypeId"
+                      }]
                   }]
                 //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
                 //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
