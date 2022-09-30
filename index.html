@@ -493,40 +493,55 @@
                 //custom code starts
 
                 embedded_svc.settings.extraPrechatFormDetails = [{
-                    "label": "Record Type ID",
-                    "value": "0121J0000016XF1QAM",
-                    "displayToAgent": false
+                    "label": "Subject",
+                    "value": "test11111",
+                    "displayToAgent": true
+                  },{
+                    "label": "Status",
+                    "value": "New",
+                    "displayToAgent": true
+                  },{
+                    "label": "Origin",
+                    "value": "Web",
+                    "displayToAgent": true
+                  },,{
+                    "label": "Email",
+                    "value": "heee.coooo@mmmm.com",
+                    "displayToAgent": true
                   }];
 
                 embedded_svc.settings.extraPrechatInfo = [{
+                    "entityName": "Case",
+                    "showOnCreate": true,
+                    "saveToTranscript": "CaseId",
                     "entityFieldMaps": [{
-                      "doCreate": true,
-                      "doFind": true,
-                      "fieldName": "LastName",
-                      "isExactMatch": true,
-                      "label": "Last Name"
-                    }, {
-                      "doCreate": true,
-                      "doFind": true,
-                      "fieldName": "FirstName",
-                      "isExactMatch": true,
-                      "label": "First Name"
-                    }, {
-                      "doCreate": true,
-                      "doFind": true,
-                      "fieldName": "Email",
-                      "isExactMatch": true,
-                      "label": "Email"
-                    }, {
+                        "isExactMatch": false,
+                        "fieldName": "SuppliedEmail",
                         "doCreate": true,
                         "doFind": false,
-                        "fieldName": "RecordTypeId",
-                        "isExactMatch": true,
-                        "label": "Record Type ID"
-                      }],
-                    "entityName": "Contact",
+                        "label": "Email"
+                    }, {
+                        "isExactMatch": false,
+                        "fieldName": "Subject",
+                        "doCreate": true,
+                        "doFind": false,
+                        "label": "issue"
+                    }, {
+                        "isExactMatch": false,
+                        "fieldName": "Status",
+                        "doCreate": true,
+                        "doFind": false,
+                        "label": "Status"
+                    }, {
+                        "isExactMatch": false,
+                        "fieldName": "Origin",
+                        "doCreate": true,
+                        "doFind": false,
+                        "label": "Origin"
+                    }],
+                    "entityName": "Case",
                     "showOnCreate": true,
-                    "saveToTranscript": "ContactId" 
+                    "saveToTranscript": "CaseId" 
                   }];
                 //custom code ends
 
