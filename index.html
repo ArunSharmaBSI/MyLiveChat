@@ -491,6 +491,13 @@
                 //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
         
                 //custom code starts
+
+                embedded_svc.settings.extraPrechatFormDetails = [{
+                    "label": "Record Type ID",
+                    "value": "0121J0000016XF1QAM",
+                    "displayToAgent": false
+                  }];
+
                 embedded_svc.settings.extraPrechatInfo = [{
                     "entityFieldMaps": [{
                       "doCreate": true,
@@ -510,7 +517,13 @@
                       "fieldName": "Email",
                       "isExactMatch": true,
                       "label": "Email"
-                    }],
+                    }, {
+                        "doCreate": true,
+                        "doFind": false,
+                        "fieldName": "RecordTypeId",
+                        "isExactMatch": true,
+                        "label": "Record Type ID"
+                      }],
                     "entityName": "Contact",
                     "showOnCreate": true,
                     "saveToTranscript": "ContactId" 
