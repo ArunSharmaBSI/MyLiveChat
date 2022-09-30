@@ -491,22 +491,61 @@
                 //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
         
                 //custom code starts
-                <form method="post" action="#">
-                    <label>First Name: </label> <input type='text' name='liveagent.prechat:ContactFirstName' /><br />
-                    <label>Last Name: </label> <input type='text' name='liveagent.prechat:ContactLastName' /><br />
-                    <label>Subject: </label> <input type='text' name='liveagent.prechat:CaseSubject' /><br />
-                    <input type="hidden" name="liveagent.prechat:CaseStatus" value="New" /><br />
-                    <input type="hidden" name="liveagent.prechat.findorcreate.map:Contact" value="FirstName,ContactFirstName;LastName,ContactLastName" />
-                    <input type="hidden" name="liveagent.prechat.findorcreate.map.doFind:Contact" value="FirstName,true;LastName,true" />
-                    <input type="hidden" name="liveagent.prechat.findorcreate.map.isExactMatch:Contact" value="FirstName,true;LastName,true" />
-                    <input type="hidden" name="liveagent.prechat.findorcreate.map.doCreate:Contact" value="FirstName,true;LastName,true" />
-                    <input type="hidden" name="liveagent.prechat.findorcreate.saveToTranscript:Contact" value="ContactId" />
-                    <input type="hidden" name="liveagent.prechat.findorcreate.showOnCreate:Contact" value="true" />
-                    <input type="hidden" name="liveagent.prechat.findorcreate.linkToEntity:Contact" value="Case,ContactId" />
-                    <input type="hidden" name="liveagent.prechat.findorcreate.map:Case" value="Subject,CaseSubject;Status,CaseStatus" />
-                    <input type="hidden" name="liveagent.prechat.findorcreate.map.doCreate:Case" value="Subject,true;Status,true" />
-                    <input type="submit" value="Submit" />
-                    </form>
+                embedded_svc.settings.extraPrechatFormDetails = [{
+                    "label": "First Name",
+                    "value": "John",
+                    "displayToAgent": true
+                  }, {
+                    "label": "Last Name",
+                    "value": "Doe",
+                    "displayToAgent": true
+                  }, {
+                    "label": "Email",
+                    "value": "john.doe@salesforce.com",
+                    "displayToAgent": true
+                  }, {
+                    "label": "Subject",
+                    "value": "Overriding your setup",
+                    "displayToAgent": true
+                  }];
+                  
+                  embedded_svc.settings.extraPrechatInfo = [{
+                    "entityName": "Contact",
+                    "showOnCreate": true,
+                    "linkToEntityName": "Case",
+                    "linkToEntityField": "ContactId",
+                    "saveToTranscript": "ContactId",
+                    "entityFieldMaps": [{
+                      "isExactMatch": true,
+                      "fieldName": "FirstName",
+                      "doCreate": true,
+                      "doFind": true,
+                      "label": "First Name"
+                    }, {
+                      "isExactMatch": true,
+                      "fieldName": "LastName",
+                      "doCreate": true,
+                      "doFind": true,
+                      "label": "Last Name"
+                    }, {
+                      "isExactMatch": true,
+                      "fieldName": "Email",
+                      "doCreate": true,
+                      "doFind": true,
+                      "label": "Email"
+                    }]
+                  }, {
+                    "entityName": "Case",
+                    "showOnCreate": true,
+                    "saveToTranscript": "CaseId",
+                    "entityFieldMaps": [{
+                      "isExactMatch": false,
+                      "fieldName": "Subject",
+                      "doCreate": true,
+                      "doFind": false,
+                      "label": "issue"
+                    }]
+                  }]
                 //custom code ends
 
                 embedded_svc.settings.enabledFeatures = ['LiveAgent'];
