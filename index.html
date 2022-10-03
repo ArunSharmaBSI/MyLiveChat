@@ -459,6 +459,7 @@
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 		
 		<!-- Salesforce Live Chat Widget Starts -->
+        
         <style type='text/css'>
             .embeddedServiceHelpButton .helpButton .uiButton {
                 background-color: #005290;
@@ -490,6 +491,8 @@
                 //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
                 //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
         
+                embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+                embedded_svc.settings.entryFeature = 'LiveAgent';
 
                 embedded_svc.settings.extraPrechatInfo = [{
                     "entityName": "Case",
@@ -521,9 +524,6 @@
                         "label": "First Name"
                       }]
                   }];
-
-                embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-                embedded_svc.settings.entryFeature = 'LiveAgent';
         
                 embedded_svc.init(
                     'https://beamsuntory--livechat.sandbox.my.salesforce.com',
