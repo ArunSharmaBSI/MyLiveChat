@@ -459,7 +459,6 @@
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 		
 		<!-- Salesforce Live Chat Widget Starts -->
-        
         <style type='text/css'>
             .embeddedServiceHelpButton .helpButton .uiButton {
                 background-color: #005290;
@@ -493,58 +492,27 @@
         
                 embedded_svc.settings.enabledFeatures = ['LiveAgent'];
                 embedded_svc.settings.entryFeature = 'LiveAgent';
-
-                embedded_svc.settings.extraPrechatInfo = [{
-                    "entityName": "Case",
-                    "showOnCreate": true,
-                    "saveToTranscript": "CaseId",
-                    "entityFieldMaps": [{
-                      "isExactMatch": false,
-                      "fieldName": "Subject",
-                      "doCreate": true,
-                      "doFind": false,
-                      "label": "Subject"
-                    }, {
-                      "isExactMatch": false,
-                      "fieldName": "SuppliedEmail",
-                      "doCreate": true,
-                      "doFind": false,
-                      "label": "Email"
-                    }, {
-                      "isExactMatch": false,
-                      "fieldName": "Last_name__c",
-                      "doCreate": true,
-                      "doFind": false,
-                      "label": "Last Name"
-                    }, {
-                        "isExactMatch": false,
-                        "fieldName": "First_name__c",
-                        "doCreate": true,
-                        "doFind": false,
-                        "label": "First Name"
-                      }]
-                  }];
         
                 embedded_svc.init(
-                    'https://beamsuntory--livechat.sandbox.my.salesforce.com',
-                    'https://beamsuntory--livechat.sandbox.my.site.com/compliance',
+                    'https://beamsuntory--chatbot.sandbox.my.salesforce.com',
+                    'https://beamsuntory--chatbot.sandbox.my.site.com/consumercomplaint',
                     gslbBaseURL,
-                    '00D8N000000512P',
-                    'Laphroaig',
+                    '00D3C000000531I',
+                    'Laphroaig_Support',
                     {
-                        baseLiveAgentContentURL: 'https://c.la4-c1cs-ia5.salesforceliveagent.com/content',
-                        deploymentId: '5728N000000Gmjw',
-                        buttonId: '5738N000000GmmO',
-                        baseLiveAgentURL: 'https://d.la4-c1cs-ia5.salesforceliveagent.com/chat',
-                        eswLiveAgentDevName: 'Laphroaig',
-                        isOfflineSupportEnabled: true
+                        baseLiveAgentContentURL: 'https://c.la1-c1cs-ia4.salesforceliveagent.com/content',
+                        deploymentId: '5723C00000001or',
+                        buttonId: '5733C00000001ov',
+                        baseLiveAgentURL: 'https://d.la1-c1cs-ia4.salesforceliveagent.com/chat',
+                        eswLiveAgentDevName: 'Laphroaig_Support',
+                        isOfflineSupportEnabled: false
                     }
                 );
             };
         
             if (!window.embedded_svc) {
                 var s = document.createElement('script');
-                s.setAttribute('src', 'https://beamsuntory--livechat.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+                s.setAttribute('src', 'https://beamsuntory--chatbot.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
                 s.onload = function() {
                     initESW(null);
                 };
@@ -553,6 +521,7 @@
                 initESW('https://service.force.com');
             }
         </script>
+        
 		<!-- Salesforce Live Chat Widget Ends -->
     </body>
 </html>
