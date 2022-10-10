@@ -492,37 +492,54 @@
         
                 embedded_svc.settings.enabledFeatures = ['LiveAgent'];
                 embedded_svc.settings.entryFeature = 'LiveAgent';
-
+                
                 embedded_svc.settings.extraPrechatInfo = [{
-                    "entityName": "Case",
-                    "showOnCreate": true,
-                    "saveToTranscript": "CaseId",
-                    "entityFieldMaps": [{
-                      "isExactMatch": false,
-                      "fieldName": "Subject",
-                      "doCreate": true,
-                      "doFind": false,
-                      "label": "Subject"
+                      "entityFieldMaps": [{
+                        "doCreate":true,
+                        "doFind":true,
+                        "fieldName":"LastName",
+                        "isExactMatch":true,
+                        "label":"Last Name"
+                      }, {
+                        "doCreate":false,
+                        "doFind":true,
+                        "fieldName":"FirstName",
+                        "isExactMatch":true,
+                        "label":"First Name"
+                      }, {
+                        "doCreate":true,
+                        "doFind":true,
+                        "fieldName":"Email",
+                        "isExactMatch":true,
+                        "label":"Email"
+                      }],
+                      "entityName":"Contact",
+                      "showOnCreate": true,
+                      "saveToTranscript": "ContactId",
                     }, {
-                      "isExactMatch": false,
-                      "fieldName": "SuppliedEmail",
-                      "doCreate": true,
-                      "doFind": false,
-                      "label": "Email"
-                    }, {
-                      "isExactMatch": false,
-                      "fieldName": "Last_name__c",
-                      "doCreate": true,
-                      "doFind": false,
-                      "label": "Last Name"
-                    }, {
+                      "entityName": "Case",
+                      "showOnCreate": true,
+                      "saveToTranscript": "CaseId",
+                      "entityFieldMaps": [{
                         "isExactMatch": false,
-                        "fieldName": "First_name__c",
+                        "fieldName": "Subject",
                         "doCreate": true,
                         "doFind": false,
-                        "label": "First Name"
+                        "label": "Subject"
+                      }, {
+                        "isExactMatch": false,
+                        "fieldName": "SuppliedEmail",
+                        "doCreate": true,
+                        "doFind": false,
+                        "label": "Email"
+                      }, {
+                        "isExactMatch": false,
+                        "fieldName": "SuppliedName",
+                        "doCreate": true,
+                        "doFind": false,
+                        "label": "Last Name"
                       }]
-                  }];
+                    }];
         
                 embedded_svc.init(
                     'https://beamsuntory--livechat.sandbox.my.salesforce.com',
@@ -536,7 +553,7 @@
                         buttonId: '5738N000000GmmO',
                         baseLiveAgentURL: 'https://d.la4-c1cs-ia5.salesforceliveagent.com/chat',
                         eswLiveAgentDevName: 'Laphroaig',
-                        isOfflineSupportEnabled: true
+                        isOfflineSupportEnabled: false
                     }
                 );
             };
