@@ -493,6 +493,16 @@
                 embedded_svc.settings.enabledFeatures = ['LiveAgent'];
                 embedded_svc.settings.entryFeature = 'LiveAgent';
                 
+                embedded_svc.settings.extraPrechatFormDetails = [{
+                    "label": "Privacy",
+                    "value": true,
+                    "displayToAgent": true
+                  }, {
+                    "label": "RecordType",
+                    "value": "0128N0000006s42QAA",
+                    "displayToAgent": false
+                  }];
+
                 embedded_svc.settings.extraPrechatInfo = [{
                       "entityFieldMaps": [{
                         "doCreate":true,
@@ -500,6 +510,12 @@
                         "fieldName":"LastName",
                         "isExactMatch":true,
                         "label":"Last Name"
+                      }, {
+                        "doCreate":true,
+                        "doFind":true,
+                        "fieldName":"RecordTypeId",
+                        "isExactMatch":true,
+                        "label":"RecordType"
                       }, {
                         "doCreate":false,
                         "doFind":true,
