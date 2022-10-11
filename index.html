@@ -498,6 +498,10 @@
                     "label": "Brand",
                     "value": "Laphroaig",
                     "displayToAgent": true
+                  }, {
+                    "label": "RecordType",
+                    "value": "0121J0000016XEOQA2",
+                    "displayToAgent": false
                   }];
 
                 embedded_svc.settings.extraPrechatInfo = [{
@@ -511,7 +515,18 @@
                     "doFind": false,
                     "label": "Brand"
                     }]
-                }];
+                }, {
+                    "entityName": "Contact",
+                    "showOnCreate": true,
+                    "saveToTranscript": "ContactId",
+                    "entityFieldMaps": [{
+                        "isExactMatch": false,
+                        "fieldName": "RecordTypeId",
+                        "doCreate": true,
+                        "doFind": false,
+                        "label": "RecordType"
+                        }]
+                    }];
 
         
                 embedded_svc.init(
