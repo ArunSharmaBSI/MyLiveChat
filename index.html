@@ -500,6 +500,19 @@
                     "displayToAgent": true
                   }];
 
+                embedded_svc.settings.extraPrechatInfo = [{
+                "entityName": "Case",
+                "showOnCreate": true,
+                "saveToTranscript": "CaseId",
+                "entityFieldMaps": [{
+                    "isExactMatch": false,
+                    "fieldName": "Brand__c",
+                    "doCreate": true,
+                    "doFind": false,
+                    "label": "Brand"
+                    }]
+                }];
+
         
                 embedded_svc.init(
                     'https://beamsuntory--livechat.sandbox.my.salesforce.com',
