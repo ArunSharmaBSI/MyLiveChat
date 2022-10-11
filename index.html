@@ -459,6 +459,7 @@
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 		
 		<!-- Salesforce Live Chat Widget Starts -->
+
         <style type='text/css'>
             .embeddedServiceHelpButton .helpButton .uiButton {
                 background-color: #005290;
@@ -492,42 +493,7 @@
         
                 embedded_svc.settings.enabledFeatures = ['LiveAgent'];
                 embedded_svc.settings.entryFeature = 'LiveAgent';
-                
-                embedded_svc.settings.extraPrechatFormDetails = [{
-                    "label": "Brand",
-                    "value": "Laphroaig",
-                    "displayToAgent": true
-                  }, {
-                    "label": "Email",
-                    "displayToAgent": true
-                  }];
-
-                  embedded_svc.settings.extraPrechatInfo = [{
-                    "entityName": "Case",
-                    "showOnCreate": true,
-                    "saveToTranscript": "CaseId",
-                    "entityFieldMaps": [{
-                      "isExactMatch": false,
-                      "fieldName": "Subject",
-                      "doCreate": true,
-                      "doFind": false,
-                      "label": "Subject"
-                    }, {
-                      "isExactMatch": false,
-                      "fieldName": "SuppliedEmail",
-                      "doCreate": true,
-                      "doFind": false,
-                      "label": "Email"
-                    }, {
-                        "isExactMatch": false,
-                        "fieldName": "Brand__c",
-                        "doCreate": true,
-                        "doFind": false,
-                        "label": "Brand"
-                        }]
-                  }];
-                  
-                  
+        
                 embedded_svc.init(
                     'https://beamsuntory--livechat.sandbox.my.salesforce.com',
                     'https://beamsuntory--livechat.sandbox.my.site.com/compliance',
@@ -556,7 +522,7 @@
                 initESW('https://service.force.com');
             }
         </script>
-        
+       
 		<!-- Salesforce Live Chat Widget Ends -->
     </body>
 </html>
