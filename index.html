@@ -475,6 +475,14 @@
                 embedded_svc.settings.displayHelpButton = true; //Or false
                 embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
 
+
+                //chat images:
+               // embedded_svc.settings.prechatBackgroundImgURL = "https://stage-laphroaig.sites-beamsuntory.com/static/version1665583517/frontend/Laphroaig/customtheme/en_US/images/laphroaig.svg"
+                embedded_svc.settings.smallCompanyLogoImgURL = ".https://stage-laphroaig.sites-beamsuntory.com/static/version1665583517/frontend/Laphroaig/customtheme/en_US/images/laphroaig.svg"
+               // embedded_svc.settings.waitingStateBackgroundImgURL = "..."
+                 embedded_svc.settings.avatarImgURL = "https://beamsuntory--bsiqa.sandbox.my.salesforce.com/sfc/p/8F0000004dcz/a/8F000000GvwO/zD7JvEvHElBvcqUkqr6dYbSYdksQqToIQqTRhcCFMhQ"
+               // embedded_svc.settings.chatbotAvatarImgURL = ""
+
                 //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
                 //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
 
@@ -513,7 +521,13 @@
                         "doCreate": true,
                         "doFind": false,
                         "label": "Brand"
-                        }]
+                        }, {
+                            "isExactMatch": false,
+                            "fieldName": "Description",
+                            "doCreate": true,
+                            "doFind": false,
+                            "label": "Subject"
+                            }]
                     }, {
                         "entityName": "Contact",
                         "showOnCreate": true,
@@ -556,6 +570,6 @@
             }
         </script>
         <!-- Salesforce Live Chat Widget Ends -->
-        
+
     </body>
 </html>
