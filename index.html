@@ -459,6 +459,7 @@
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 		
         <!-- Salesforce Live Chat Widget Starts -->
+
         <style type='text/css'>
             .embeddedServiceHelpButton .helpButton .uiButton {
                 background-color: #005290;
@@ -471,29 +472,20 @@
             img[embeddedService-chatHeader_chatHeader] {
                 max-width: 100px !important;
             }
-
         </style>
-
+        
         <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
         <script type='text/javascript'>
             var initESW = function(gslbBaseURL) {
                 embedded_svc.settings.displayHelpButton = true; //Or false
                 embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
-
-
-                //chat images:
-               // embedded_svc.settings.prechatBackgroundImgURL = "https://stage-laphroaig.sites-beamsuntory.com/static/version1665583517/frontend/Laphroaig/customtheme/en_US/images/laphroaig.svg"
-               embedded_svc.settings.smallCompanyLogoImgURL = "https://beamsuntory--bsiqa--c.sandbox.vf.force.com/resource/1654088312000/BeamLogo?"
-               // embedded_svc.settings.waitingStateBackgroundImgURL = "..."
-               embedded_svc.settings.avatarImgURL = "https://beamsuntory--bsiqa--c.sandbox.vf.force.com/resource/1666074975000/Live_Chat_Avatar?"
-               // embedded_svc.settings.chatbotAvatarImgURL = ""
-
+        
                 //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
                 //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
-
+        
                 //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
                 //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
-
+        
                 // Settings for Chat
                 //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
                     // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
@@ -502,64 +494,65 @@
                 //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
                 //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
                 //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
-
+        
                 embedded_svc.settings.enabledFeatures = ['LiveAgent'];
                 embedded_svc.settings.entryFeature = 'LiveAgent';
 
                 embedded_svc.settings.extraPrechatFormDetails = [{
-                            "label": "Brand",
-                            "value": "Laphroaig",
-                            "displayToAgent": true
-                        }, {
-                            "label": "RecordType",
-                            "value": "0121J0000016XEOQA2",
-                            "displayToAgent": false
-                        }];
+                    "label": "Brand",
+                    "value": "Laphroaig",
+                    "displayToAgent": true
+                  }, {
+                    "label": "RecordType",
+                    "value": "0121J0000016XEOQA2",
+                    "displayToAgent": false
+                  }];
 
                 embedded_svc.settings.extraPrechatInfo = [{
-                    "entityName": "Case",
+                "entityName": "Case",
+                "showOnCreate": true,
+                "saveToTranscript": "CaseId",
+                "entityFieldMaps": [{
+                    "isExactMatch": false,
+                    "fieldName": "Brand__c",
+                    "doCreate": true,
+                    "doFind": false,
+                    "label": "Brand"
+                    }]
+                }, {
+                    "entityName": "Contact",
                     "showOnCreate": true,
-                    "saveToTranscript": "CaseId",
+                    "saveToTranscript": "ContactId",
                     "entityFieldMaps": [{
                         "isExactMatch": false,
-                        "fieldName": "Brand__c",
+                        "fieldName": "RecordTypeId",
                         "doCreate": true,
                         "doFind": false,
-                        "label": "Brand"
+                        "label": "RecordType"
                         }]
-                    }, {
-                        "entityName": "Contact",
-                        "showOnCreate": true,
-                        "saveToTranscript": "ContactId",
-                        "entityFieldMaps": [{
-                            "isExactMatch": false,
-                            "fieldName": "RecordTypeId",
-                            "doCreate": true,
-                            "doFind": false,
-                            "label": "RecordType"
-                            }]
                     }];
 
+        
                 embedded_svc.init(
-                    'https://beamsuntory--bsiqa.sandbox.my.salesforce.com',
-                    'https://beamsuntory--bsiqa.sandbox.my.site.com/consumercomplaint',
+                    'https://beamsuntory--livechat.sandbox.my.salesforce.com',
+                    'https://beamsuntory--livechat.sandbox.my.site.com/compliance',
                     gslbBaseURL,
-                    '00D8F0000004dcz',
-                    'Laphroaig_Live_Chat',
+                    '00D8N000000512P',
+                    'Laphroaig',
                     {
-                        baseLiveAgentContentURL: 'https://c.la5-c1cs-ia5.salesforceliveagent.com/content',
-                        deploymentId: '5728F000000CaUa',
-                        buttonId: '5738F000000Gmjt',
-                        baseLiveAgentURL: 'https://d.la5-c1cs-ia5.salesforceliveagent.com/chat',
-                        eswLiveAgentDevName: 'Laphroaig_Live_Chat',
-                        isOfflineSupportEnabled: true
+                        baseLiveAgentContentURL: 'https://c.la4-c1cs-ia5.salesforceliveagent.com/content',
+                        deploymentId: '5728N000000Gmjw',
+                        buttonId: '5738N000000GmmO',
+                        baseLiveAgentURL: 'https://d.la4-c1cs-ia5.salesforceliveagent.com/chat',
+                        eswLiveAgentDevName: 'Laphroaig',
+                        isOfflineSupportEnabled: false
                     }
                 );
             };
-
+        
             if (!window.embedded_svc) {
                 var s = document.createElement('script');
-                s.setAttribute('src', 'https://beamsuntory--bsiqa.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+                s.setAttribute('src', 'https://beamsuntory--livechat.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
                 s.onload = function() {
                     initESW(null);
                 };
@@ -568,7 +561,8 @@
                 initESW('https://service.force.com');
             }
         </script>
-        <!-- Salesforce Live Chat Widget Ends -->
+       
+		<!-- Salesforce Live Chat Widget Ends -->
  
     </body>
 </html>
