@@ -509,6 +509,10 @@
                         "label": "Brand",
                         "value": "Laphroaig",
                         "displayToAgent": true
+                    }, {
+                        "label": "PrivacyTCConsent",
+                        "value": true,
+                        "displayToAgent": false
                     }];
 
             embedded_svc.settings.extraPrechatInfo = [{
@@ -521,31 +525,37 @@
                     "doCreate": true,
                     "doFind": false,
                     "label": "Brand"
-                    }]
-                }, {
-                    "entityName": "Contact",
-                    "showOnCreate": true,
-                    "saveToTranscript": "ContactId",
-                    "entityFieldMaps": [{
-                        "doCreate":true,
-                        "doFind":false,
-                        "fieldName":"LastName",
-                        "isExactMatch":false,
-                        "label":"Last Name"
-                      }, {
-                        "doCreate":true,
-                        "doFind":false,
-                        "fieldName":"FirstName",
-                        "isExactMatch":false,
-                        "label":"First Name"
-                      }, {
-                        "doCreate":true,
-                        "doFind":true,
-                        "fieldName":"Email",
-                        "isExactMatch":true,
-                        "label":"Email"
-                      }]
-                }];
+                },{
+                    "isExactMatch": false,
+                    "fieldName": "Contact_Us_Page_Privacy_Consent__c",
+                    "doCreate": true,
+                    "doFind": false,
+                    "label": "PrivacyTCConsent"
+                }]
+            }, {
+                "entityName": "Contact",
+                "showOnCreate": true,
+                "saveToTranscript": "ContactId",
+                "entityFieldMaps": [{
+                    "doCreate":true,
+                    "doFind":false,
+                    "fieldName":"LastName",
+                    "isExactMatch":false,
+                    "label":"Last Name"
+                    }, {
+                    "doCreate":true,
+                    "doFind":false,
+                    "fieldName":"FirstName",
+                    "isExactMatch":false,
+                    "label":"First Name"
+                    }, {
+                    "doCreate":true,
+                    "doFind":true,
+                    "fieldName":"Email",
+                    "isExactMatch":true,
+                    "label":"Email"
+                }]
+            }];
 
             embedded_svc.init(
                 'https://beamsuntory--bsiqa.sandbox.my.salesforce.com',
