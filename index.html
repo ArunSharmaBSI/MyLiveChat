@@ -561,6 +561,10 @@
                 }]
             }];
 
+            embedded_svc.addEventHandler("onChasitorMessage", function(data) {
+                console.log("onChasitorMessage event was fired.  liveAgentSessionKey was " + data.liveAgentSessionKey);
+            });
+
             embedded_svc.init(
                 'https://beamsuntory--bsiqa.sandbox.my.salesforce.com',
                 'https://beamsuntory--bsiqa.sandbox.my.site.com/consumercomplaint',
